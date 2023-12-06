@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+  let sum=0;
+  for(let i=1; i<=100; i++) {      /*자바에서 int가 자바스크립트에서 let */
+	  sum=sum+i;
+  }
+  alert("sum : " +sum);
+  
+  function over(obj) {
+	  obj.src="images/banana.png";
+  }
+  
+  function out(obj) {
+	  obj.src="images/apple.png"
+  }
+</script>
+</head>
+<body>
+<h1> Hello </h1>
+<img src="images/apple.png" onclick="src='images/banana.png'"> /*사과를 클릭하면 바나나로 변함! */
+<img src="images/apple,png" onmouseover="over(this)"
+                            onmouseout="out(this)">
+</body>
+</html>

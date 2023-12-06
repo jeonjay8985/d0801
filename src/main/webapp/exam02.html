@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+function check(){
+	if(document.frm.id.value==""){
+		alert("아이디를 입력하세요");
+		document.frm.id.focus();      //아이디 다시 입력할수있도록 자동적으로 커서가 감!
+		return false;
+	}
+	if(document.frm.name.value==""){
+	    alert("이름을 입력하세요");
+	    document.frm.name.focus();
+	    return false;
+	}
+	if(document.frm.pass.value==""){
+	    alert("비밀번호를 입력하세요");
+	    document.frm.pass.focus();
+	    return false;
+	}
+	if(document.frm.repass.value==""){
+	    alert("확인비밀번호를 입력하세요");
+	    document.frm.repass.focus();
+	    return false;
+	    
+	}
+	if(document.frm.pass.value != document.frm.repass.value){
+		alert("비밀번호와 확인비밀번호가 일치하지 않습니다");
+		document.frm.repass.focus();
+		return false;
+	}
+
+	alert("아이디: " +document.frm.id.value+"\n"+
+			"이름: " +document.frm.name.value+"\n"+
+			"비밀번호: " +document.frm.pass.value);
+	document.frm.submit();
+}
+</script>
+</head>
+<body>
+<form name="frm" method="post" action="process.jsp">
+아이디 : <input type="text" name="id"> <br>
+이름: <input type="text" name="name"> <br>
+비밀번호: <input type="password" name="pass"> <br>
+확인비밀번호: <input type="password" name="repass"> <br>
+<input type="button" value="보내기" onclick="check()">
+<input type="reset" value="취소"> 
+</form>
+</body>
+</html>
